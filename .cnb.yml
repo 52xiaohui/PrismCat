@@ -21,5 +21,4 @@ $:
             - for name in config.toml auth.json; do if [ -f "$HOME/.codex/$name" ] && [ ! -L "$HOME/.codex/$name" ] && [ ! -s "$HOME/.cnb/codex/$name" ]; then cp "$HOME/.codex/$name" "$HOME/.cnb/codex/$name"; fi; touch "$HOME/.cnb/codex/$name"; rm -f "$HOME/.codex/$name"; ln -sfn "$HOME/.cnb/codex/$name" "$HOME/.codex/$name"; done
             - if [ -f "$HOME/.copilot/config.json" ] && [ ! -L "$HOME/.copilot/config.json" ] && [ ! -s "$HOME/.cnb/.copilot/config.json" ]; then cp "$HOME/.copilot/config.json" "$HOME/.cnb/.copilot/config.json"; fi; touch "$HOME/.cnb/.copilot/config.json"; rm -f "$HOME/.copilot/config.json"; ln -sfn "$HOME/.cnb/.copilot/config.json" "$HOME/.copilot/config.json"
             - chmod 600 "$HOME/.cnb/codex/auth.json" "$HOME/.cnb/codex/config.toml" "$HOME/.cnb/.copilot/config.json"
-            - uv sync --frozen || uv sync
             - codex --version
